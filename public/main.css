@@ -177,6 +177,7 @@ li {
 .prof:hover .prof-details {
     display: block;
     transition: .4s;
+    cursor: pointer;
     
 }
 
