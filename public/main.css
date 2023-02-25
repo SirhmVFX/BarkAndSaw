@@ -170,12 +170,14 @@ li {
     min-width: 130px;
     left: 0px;
     display: none;
+    border: 10px;
     transition: .4s;
 }
 
 .prof:hover .prof-details {
     display: block;
     transition: .4s;
+    
 }
 
 .prof a {
