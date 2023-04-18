@@ -1,8 +1,8 @@
 const express = require("express")
 const app = express()
 
-app.get("/", function(req, res) {
-    res.send("Welcome to the homepage")
-})
+const router = require("./router")
+
+app.use("/", router)
 
 app.listen(3124)
