@@ -56,3 +56,30 @@ h3 {
 p {
     font-size: --p;
 }
+
+.container {
+    width: min(1,400px, 80%);
+    margin-inline: auto;
+    padding: 3rem;
+    display: flex;
+}
+
+.mg-bk-1 {
+    margin-bottom: 1rem;
+}
+
+.color1 {
+    color: var(--color1);
+}
+
+.color2 {
+    color: var(--color2);
+}
+
+.color3 {
+    color: var(--color3);
+}
+
+.color4 {
+    color: var(--color4);
+}
