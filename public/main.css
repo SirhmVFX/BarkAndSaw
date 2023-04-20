@@ -58,9 +58,8 @@ p {
 }
 
 .container {
-    width: min(1,400px, 80%);
+    width: min(1400px, 80%);
     margin-inline: auto;
-    padding: 3rem;
     display: flex;
 }
 
@@ -82,4 +81,12 @@ p {
 
 .color4 {
     color: var(--color4);
+}
+
+/* GENERAL STYLES */
+.first-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
