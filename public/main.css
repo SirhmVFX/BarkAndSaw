@@ -96,9 +96,20 @@ p {
 nav {
     display: flex;
     padding: 2rem;
+    justify-content: space-between;
 }
 
 .nav_menu {
-    display: flex ;
-    
+    display: flex;
+}
+
+.nav_menu li {
+    margin-inline: 1rem;
+    list-style: none;
+
+}
+
+.nav_menu li a {
+    color: var(--color1);
+    text-decoration: none;
 }
