@@ -119,3 +119,9 @@ nav {
     color: var(--color1);
     text-decoration: none;
 }
+
+.two-col {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+}
