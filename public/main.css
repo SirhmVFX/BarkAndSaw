@@ -135,3 +135,9 @@ nav {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
 }
+
+.icon-tags {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
