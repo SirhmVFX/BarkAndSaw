@@ -78,6 +78,7 @@ p {
 
 .sq {
     width: 70%;
+    
 }
 
 .color1 {
@@ -136,8 +137,3 @@ nav {
     grid-auto-columns: 1fr;
 }
 
-.icon-tags {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
