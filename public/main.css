@@ -218,6 +218,11 @@ nav {
     border-radius: 10px;
 }
 
+footer {
+    padding: 3rem;
+    background-color: #D7D9D8;
+}
+
 .fi-ft {
     display: flex;
     justify-content: space-between;
