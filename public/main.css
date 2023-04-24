@@ -217,3 +217,15 @@ nav {
     box-shadow: 0 10px 10px rgb(213, 213, 213);
     border-radius: 10px;
 }
+
+.fi-ft {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
