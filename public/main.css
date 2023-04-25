@@ -190,14 +190,36 @@ nav {
 
 .review-container {
     display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .review-cards {
     width: 400px;
     
 }
+
+.rev {
+    position: relative;
+}
+
+.click-nav {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn1  {
+    left: 0;
+}
+
+.btn2 {
+    right: 0;
+}
+
 
 .review-details {
     position: relative;
