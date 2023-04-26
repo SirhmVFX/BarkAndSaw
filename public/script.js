@@ -15,3 +15,6 @@ reviewContainer.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 })
+
+alert("Welcome")
+console.log("hyyyyyyy");

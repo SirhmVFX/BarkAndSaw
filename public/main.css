@@ -222,16 +222,14 @@ nav {
 }
 
 .review-container {
+    width: 1200px;
     padding: 1rem 2rem;
     display: flex;
     gap: 3rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    flex-wrap: wrap;
+    overflow-x: scroll;
 }
 
-.review-container::-webkit-scrollbar {
-    display: none;
-}
 
 .review-cards {
     width: 400px;
