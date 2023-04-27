@@ -1,4 +1,4 @@
-const carousel = document.querySelector(".")
-const btn = document.querySelector("")
+const carousel = document.querySelector(".review-container")
+const arrowBtn = document.querySelector(".review i")
 
 
