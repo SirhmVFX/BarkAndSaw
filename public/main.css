@@ -293,6 +293,18 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 2rem;
+    cursor: pointer;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+
+}
+
+.show {
+    max-height: 300px;
+    transition: 2s;
 }
 
 

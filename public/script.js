@@ -7,3 +7,11 @@ arrowBtn.forEach( function(btn) {
         carousel.scrollLeft += btn.id === "left" ? - firstCardWidth : + firstCardWidth;
     })
 })
+
+
+const faq = document.querySelector(".faq-q")
+const answer = document.querySelector(".answer")
+
+faq.addEventListener("click", function() {
+    answer.classList.toggle("show")
+})
