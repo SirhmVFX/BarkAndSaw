@@ -278,3 +278,33 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+
+.FAQ {
+    padding: 2rem;
+    border: 1px solid var(--color-bk);
+    border-radius: 10px;
+    align-items: center;
+}
+
+
+.faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+
+
+.show {
+    height: 100px;
+}
+
+
+.FAQ i {
+    background-color: var(--color-bk);
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+}
