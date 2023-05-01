@@ -302,13 +302,16 @@ footer {
 
 }
 
-
-.faq-q {
-    display: flex;
-    
+.FAQ {
     border: 1px solid var(--color-bk);
     border-radius: 10px;
     padding: 1rem;
+}
+
+
+.faq-q {
+    display: flex;
+    flex-direction: column;
 }
 
 .question {
@@ -325,6 +328,7 @@ footer {
 }
 
 .FAQ.active .answer {
+    margin-top: 1rem;
     max-height: 50px;
 }
 
