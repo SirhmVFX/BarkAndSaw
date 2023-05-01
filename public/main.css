@@ -219,22 +219,21 @@ nav {
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    color: white;
+    color: var(--color-bk);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 9;
-    background-color: var(--color1);
 }
 
 .btn1  {
-    left: -30px;
+    left: -100px;
 
 }
 
 .btn2 {
-    right: -30px;
+    right: -100px;
 
 }
 
@@ -252,6 +251,8 @@ nav {
     width: 400px;
     
 }
+
+.review-cards figure {}
 
 
 
