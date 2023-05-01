@@ -279,7 +279,6 @@ nav {
 }
 
 footer {
-    padding: 3rem;
     background-color: #D7D9D8;
 }
 
@@ -287,12 +286,16 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid black;
+    width: 100%;
+    margin-inline: auto;
 }
 
 .socials {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 .faq-container {
