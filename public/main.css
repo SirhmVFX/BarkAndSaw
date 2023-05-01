@@ -298,30 +298,38 @@ footer {
 
 .FAQ {
     padding: 2rem;
-    border: 1px solid var(--color-bk);
-    border-radius: 10px;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 
 .faq-q {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 2rem;
     cursor: pointer;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid var(--color-bk);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;align-items: center;
 }
 
 .answer {
     max-height: 0;
     overflow: hidden;
-    transition: 1s;
+    transition: .4s;
 
 }
 
 .show {
-    max-height: 300px;
-    transition: 1s;
+    max-height: 50px;
 }
 
 
