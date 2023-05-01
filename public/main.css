@@ -80,6 +80,14 @@ p {
     padding: 2rem;
 }
 
+.button1 {
+    width: 200px;
+    padding: .6rem 1rem;
+    background-color: var(--color1);
+    border: none;
+    border-radius: 10px;
+}
+
 .mg-bk-1 {
     margin-bottom: 2rem;
 }
