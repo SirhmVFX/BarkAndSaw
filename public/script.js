@@ -9,12 +9,10 @@ arrowBtn.forEach( function(btn) {
 })
 
 
-const faq = document.querySelectorAll(".faq-q").toArray()
-const answer = document.querySelectorAll(".answer").toArray()
+const faqs = document.querySelectorAll(".FAQ")
 
-
-faq.forEach(function(item) {
-    item.addEventListener("click", function() {
-        answer.classList.toggle("show")
+faqs.forEach(function(faq) {
+    faq.addEventListener("click", () => {
+        faq.classList.toggle("active")
     })
 })

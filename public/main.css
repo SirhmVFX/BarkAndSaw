@@ -295,30 +295,26 @@ footer {
     align-items: center;
 }
 
-
-.FAQ {
-    padding: 2rem;
-    align-items: center;
+.faq-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+
 }
 
 
 .faq-q {
     display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 1rem;
+    
     border: 1px solid var(--color-bk);
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .question {
     display: flex;
-    justify-content: space-between;align-items: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .answer {
@@ -328,20 +324,14 @@ footer {
 
 }
 
-.show {
+.FAQ.active .answer {
     max-height: 50px;
-}
-
-
-
-.show {
-    height: 100px;
 }
 
 
 .FAQ i {
     background-color: var(--color-bk);
-    padding: 10px;
+    padding: 5px;
     border-radius: 50%;
     color: white;
 }
