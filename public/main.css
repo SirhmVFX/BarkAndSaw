@@ -396,9 +396,6 @@ footer {
     align-items: center;
 }
 
-.mg-t {
-    margin-top: 2rem;
-}
 
 form {
     margin-top: 4rem;
@@ -410,4 +407,8 @@ form input {
     padding: .7rem;
     border-radius: 10px;
     border: 1px solid var(--color-bk);
+}
+
+form label {
+    margin-top: 3rem;
 }
