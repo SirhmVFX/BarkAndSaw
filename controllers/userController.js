@@ -1,3 +1,3 @@
 exports.homepage = function(req, res) {
-    res.render("homepage")
+    res.render("homepage", {pageTitle: "Bark&Saw"})
 }
