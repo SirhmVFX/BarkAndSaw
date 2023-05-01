@@ -286,9 +286,23 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
     width: 100%;
-    margin-inline: auto;
+
+}
+
+.fi-ft2 {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fi-ft2 li {
+    list-style: none;
+}
+
+.fi-ft2 a {
+    text-decoration: none;
+    color: var(--color-bk);
 }
 
 .socials {
