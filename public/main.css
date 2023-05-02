@@ -332,6 +332,7 @@ footer {
     border: 1px solid var(--color-bk);
     border-radius: 10px;
     padding: 1rem;
+    cursor: pointer;
 }
 
 
@@ -408,6 +409,8 @@ footer {
 form {
     margin-top: 4rem;
 }
+
+
 
 form input {
     display: block;
