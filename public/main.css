@@ -379,7 +379,7 @@ footer {
 .login {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr 1.5FR ;
+    grid-auto-columns: 1fr 2fr ;
 }
 
 .side1 {
