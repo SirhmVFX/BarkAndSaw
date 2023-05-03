@@ -87,6 +87,8 @@ p {
     border: none;
     border-radius: 10px;
     margin-block: 2rem;
+    font-weight: 500;
+    color: white;
 }
 
 .mg-bk-1 {
@@ -437,6 +439,11 @@ form input {
     align-items: center;
     gap: 2rem;
 
+}
+
+.nm div {
+    width: 50%;
+    margin-block: 1rem;
 }
 
 
