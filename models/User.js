@@ -1,7 +1,6 @@
-// const usersCollection = require("../db").db().collection("users")
+const usersCollection = require("../db").db().collection("users")
 const bcrypt = require("bcryptjs")
 const validator = require("validator")
-const { default: isEmail } = require("validator/lib/isEmail")
 
 const User = function(data) {
     this.data = data
@@ -50,7 +49,7 @@ User.prototype.register = function(){
             let salt = bcrypt.genSaltSync(10)
             this.data.password = bcrypt.hashSync(this.data.password, salt)
     
-            console.log(this.data);
+            await usersCollection.insertOne(this.data)
             resolve()
         }
         reject(this.errors)
