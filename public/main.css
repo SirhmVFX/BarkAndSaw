@@ -432,4 +432,10 @@ form input {
     align-items: center;
 }
 
+.nm {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 
