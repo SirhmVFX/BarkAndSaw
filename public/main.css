@@ -412,8 +412,8 @@ form {
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
+
 
 
 
@@ -436,6 +436,7 @@ form input {
     display: flex;
     align-items: center;
     gap: 2rem;
+
 }
 
 
