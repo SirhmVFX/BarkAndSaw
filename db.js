@@ -5,7 +5,7 @@ dotenv.config()
 async function go() {
     let client = MongoClient(process.env.CONNECTIONSTRING)
     await client.connect()
-    module.exports = client
+    module.exports = client.db()
     const app = require("./app")
     app.listen(process.env.PORT)
 

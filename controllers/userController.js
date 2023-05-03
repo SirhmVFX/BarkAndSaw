@@ -21,6 +21,6 @@ exports.register = function(req, res) {
     })
 }
 
-exports.singIn = function(req, res) {
+// exports.singIn = function(req, res) {
 
-}
+// }

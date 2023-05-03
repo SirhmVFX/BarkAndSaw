@@ -1,4 +1,4 @@
-const usersCollection = require("../db").db().collection("users")
+// const usersCollection = require("../db").db().collection("users")
 const bcrypt = require("bcryptjs")
 const validator = require("validator")
 const { default: isEmail } = require("validator/lib/isEmail")
@@ -33,22 +33,29 @@ User.prototype.validate = function() {
     if (this.data.firstname.length > 20 ) {this.errors.push("firstname can not me more than 20 characters")}
     if (this.data.lastname.length > 20 ) {this.errors.push("lastname can not me more than 20 characters")}
 
-    if (!isAlphanumeric(this.data.firstname)) {this.errors.push("firstname should consists of character only")}
-    if (!isAlphanumeric(this.data.lastname)) {this.errors.push("lastname should consists of character only")}
+    if (!validator.isAlphanumeric(this.data.firstname)) {this.errors.push("firstname should consists of character only")}
+    if (!validator.isAlphanumeric(this.data.lastname)) {this.errors.push("lastname should consists of character only")}
 
-    if (!isEmail(this.data.email)) {this.errors.push("please enter a valid email address")}
+    if (!validator.isEmail(this.data.email)) {this.errors.push("please enter a valid email address")}
 
     if (this.data.password.length < 8 && this.data.password.length > 20) {this.errors.push("Password must be atleast 8 characters and not more than 20 characters")}
 }
 
 User.prototype.register = function(){
-    this.validate()
-    this.cleanUp()
-
-    if (!this.errors) {
-        let salt = bcrypt.genSaltSync(10)
-        this.data.password = bcrypt.hashSync(this.data.password, salt)
-    }
+    return new Promise(async (resolve, reject) => {
+        await this.validate()
+        this.cleanUp()
+    
+        if (!this.errors) {
+            let salt = bcrypt.genSaltSync(10)
+            this.data.password = bcrypt.hashSync(this.data.password, salt)
+    
+            console.log(this.data);
+            resolve()
+        }
+        reject(this.errors)
+        
+    })
 }
 
 module.exports = User
