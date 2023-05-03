@@ -1,6 +1,6 @@
-const usersCollection = require("../db").db().collection("users")
 const bcrypt = require("bcryptjs")
 const validator = require("validator")
+const usersCollection = require("../db").db().collection("users")
 
 const User = function(data) {
     this.data = data
@@ -51,8 +51,10 @@ User.prototype.register = function(){
     
             await usersCollection.insertOne(this.data)
             resolve()
+        } else {
+            reject(this.errors)
         }
-        reject(this.errors)
+        
         
     })
 }
