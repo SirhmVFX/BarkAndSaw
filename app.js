@@ -13,7 +13,7 @@ let sessionOptions = session({
 app.use(sessionOptions)
 
 app.use(function(req, res, next) {
-    res.locals.session = req.session.user
+    res.locals.user = req.session.user
     next()
 })
 
