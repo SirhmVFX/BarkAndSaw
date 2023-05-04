@@ -60,4 +60,17 @@ User.prototype.register = function(){
     })
 }
 
+User.prototype.login = function(){
+    return new Promise(async(resolve, reject) => {
+        this.cleanUp()
+        const attemptedUser = await usersCollection.findOne({email: this.data.email})
+
+        if (attemptedUser && bcrypt.compareSync(this.data.password, attemptedUser.password)) {
+            resolve("login successful")
+        } else {
+            reject("Invalid Login credentials")
+        }
+    })
+}
+
 module.exports = User
