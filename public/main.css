@@ -264,9 +264,13 @@ nav {
     
 }
 
-.review-cards figure {}
-
-
+.error {
+    padding: 1rem;
+    background-color: var(--color-alert);
+    color: white;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
 
 
 

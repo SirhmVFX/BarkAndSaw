@@ -5,7 +5,7 @@ exports.homepage = function(req, res) {
 }
 
 exports.signIn = function(req, res) {
-    res.render("login", {pageTitle: "Login-Bark&Saw"})
+    res.render("login", {pageTitle: "Login-Bark&Saw", errors: req.flash("logErrors")})
 }
 
 exports.signUp = function (req, res) {
@@ -16,8 +16,11 @@ exports.register = function(req, res) {
     let user = new User(req.body)
     user.register().then(function(){
         res.redirect("/login")
-    }).catch(function(){
-        res.send(user.errors)
+    }).catch(function(e){
+        req.flash("regErrors", e)
+        req.session.save(function() {
+            res.redirect("/")
+        })
     })
 }
 
@@ -29,10 +32,10 @@ exports.login = function(req, res) {
             res.redirect("/") 
         })
     }).catch(function(e){
-        req.session.save(function(){
-            res.send(e)
+        req.flash("logErrors", e)
+        req.session.save(function() {
+            res.redirect("/sign-in")
         })
-
     })
 }
 

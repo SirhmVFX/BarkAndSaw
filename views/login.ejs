@@ -16,6 +16,12 @@
                 <p>New to Bark&Saw? <a href="/sign-up">Sign up</a></p>
             </div>
 
+            <% errors.forEach(function(error) { %>
+                <div class="error">
+                    <p><%= error %></p>
+                </div>
+            <% }) %>
+
             <div >
                 <form action="/login" method="POST">
                     

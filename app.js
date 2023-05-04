@@ -1,6 +1,7 @@
 const express = require("express")
 const session = require("express-session")
 const MongoStore = require("connect-mongo")
+const flash = require("connect-flash")
 const app = express()
 const router = require("./router")
 
@@ -13,9 +14,11 @@ let sessionOptions = session({
 })
 
 app.use(sessionOptions)
+app.use(flash())
 
 app.use(function(req, res, next) {
     res.locals.user = req.session.user
+    // res.locals.errors = req.session.flash("errors")
     next()
 })
 
