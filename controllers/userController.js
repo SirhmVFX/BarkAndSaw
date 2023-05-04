@@ -25,7 +25,7 @@ exports.login = function(req, res) {
     let user = new User(req.body)
     user.login().then(function(result){
         req.session.user = {username: user.data.username, _id: user.data._id}
-        req.session.save(function() {
+        req.session.save(function(result) {
             res.redirect("/")
         })
     }).catch(function(e){

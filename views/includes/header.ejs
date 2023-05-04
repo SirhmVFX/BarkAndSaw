@@ -18,7 +18,11 @@
 
                 <input type="text" class="input-field" placeholder="Search entire stores  here..." >
 
-                <p>Welcome <%= user.username %></p>
+                <% if (user) { %>
+                    <p>Welcome <%= user.firstname %></p>
+                <% } else { %>
+                    <p>No user</p>
+                <% } %>
 
                 <div class="top-ico">
                     <i class="fa color1 fa-user" aria-hidden="true"></i>
