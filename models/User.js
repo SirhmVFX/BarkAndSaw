@@ -45,9 +45,10 @@ User.prototype.register = function(){
         await this.validate()
         this.cleanUp()
     
-        if (!this.errors) {
+        if (!this.errors.length) {
             let salt = bcrypt.genSaltSync(10)
             this.data.password = bcrypt.hashSync(this.data.password, salt)
+            this.data.confirmPassword = bcrypt.hashSync(this.data.confirmPassword, salt)
     
             await usersCollection.insertOne(this.data)
             resolve()

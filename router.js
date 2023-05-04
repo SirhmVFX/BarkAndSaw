@@ -4,8 +4,8 @@ const router = express.Router()
 const userController = require("./controllers/userController")
 
 router.get("/", userController.homepage)
-router.get("/login", userController.login)
-// router.post("/login", userController.signIn)
+router.get("/sign-in", userController.signIn)
+router.post("/login", userController.login)
 router.get("/sign-up", userController.signUp)
 router.post("/register", userController.register)
 
