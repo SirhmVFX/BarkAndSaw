@@ -9,23 +9,22 @@ exports.signIn = function(req, res) {
 }
 
 exports.signUp = function (req, res) {
-    res.render("sign-up", {pageTitle: "SignUp-Bark&Saw", errors: req.flash("regErrors")})
+    res.render("sign-up", {pageTitle: "SignUp-Bark&Saw", rerrors: req.flash("regErrors")})
 }
 
 exports.register = function(req, res) {
     let user = new User(req.body)
-    user.register().then(function(){
+    user.register()
         if (!user.errors) {
             res.redirect("/login")
         } else {
-            
+            user.errors.forEach(function(err) {
+                req.flash("regErrors", err)
+            })
+            req.session.save(function(){
+                res.redirect("/sign-up")
+            })
         }
-    }).catch(function(er){
-        req.flash("regErrors", er)
-        req.session.save(function() {
-            res.redirect("/sign-up")
-        })
-    })
 }
 
 exports.login = function(req, res) {
