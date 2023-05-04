@@ -35,3 +35,17 @@ exports.login = function(req, res) {
 
     })
 }
+
+exports.profile = function(req, res) {
+    if (req.session.user) {
+        res.render("profile")
+    } else {
+        res.redirect("/sign-in")
+    }
+}
+
+exports.logout = function(req, res) {
+    req.session.destroy(function(){
+        res.redirect("/")
+    })
+}
