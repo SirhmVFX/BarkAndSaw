@@ -15,7 +15,7 @@ exports.signUp = function (req, res) {
 exports.register = function(req, res) {
     let user = new User(req.body)
     user.register().then(function(){
-        res.render("/")
+        res.redirect("/")
     }).catch(function(){
         res.send(user.errors)
     })

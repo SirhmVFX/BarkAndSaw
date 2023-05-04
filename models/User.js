@@ -17,9 +17,9 @@ User.prototype.cleanUp = function() {
     if (this.data.password !== this.data.confirmPassword) {this.errors.push("Passwords does not match")}
 
     this.data = {
-        firstname: this.data.firstname.trim().toLowercase(),
-        lastname: this.data.lastname.trim().toLowercase(),
-        email: this.data.email.trim().toLowercase(),
+        firstname: this.data.firstname.trim().toLowerCase(),
+        lastname: this.data.lastname.trim().toLowerCase(),
+        email: this.data.email.trim().toLowerCase(),
         password: this.data.password,
         confirmPassword: this.data.confirmPassword
     }
