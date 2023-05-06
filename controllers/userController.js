@@ -14,19 +14,10 @@ exports.signUp = function (req, res) {
 
 exports.register = function(req, res) {
     let user = new User(req.body)
-    user.register().then(function(){
-        if (user.errors.length) {
-            user.errors.forEach(function(err) {
-                req.flash("regErrors", err)
-            })
-            req.session.save(function(){
-                res.redirect("/sign-up")
-            })
-        } else {
-            res.redirect("/sign-in")
-        }
-    }).catch(function(){
-        res.send("ooppsss!!!")
+    user.register().then(function() {
+        res.redirect("/sign-in")
+    }).catch(function() {
+        res.send(user.errors)
     })
 }
 
