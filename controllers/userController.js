@@ -9,7 +9,7 @@ exports.signIn = function(req, res) {
 }
 
 exports.signUp = function (req, res) {
-    res.render("sign-up", {pageTitle: "SignUp-Bark&Saw", errors: req.flash("regErrors")})
+    res.render("sign-up", {pageTitle: "SignUp-Bark&Saw", rerrors: req.flash("regErrors")})
 }
 
 exports.register = function(req, res) {
@@ -19,9 +19,7 @@ exports.register = function(req, res) {
             res.redirect("/sign-in")
         })
     }).catch(function(regErrors){
-        regErrors.forEach(function() {
-            req.flash("regErrors", regErrors)
-        })
+        req.flash("regErrors", regErrors)
         req.session.save(function() {
             res.redirect("/sign-up")
         })

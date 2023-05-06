@@ -39,8 +39,8 @@ User.prototype.validate = function() {
         if (!validator.isEmail(this.data.email)) {this.errors.push("please enter a valid email address")}
     
         if (this.data.password.length < 8 && this.data.password.length > 20) {this.errors.push("Password must be atleast 8 characters and not more than 20 characters")}
-    
-        if (validator.is(this.data.email)) {
+
+        if (validator.isEmail(this.data.email)) {
             let userExist = await usersCollection.findOne({email: this.data.email})
             if (userExist) {this.errors.push("sorry a user with this email is existing")}
         }
