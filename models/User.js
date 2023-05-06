@@ -32,13 +32,15 @@ User.prototype.validate = function() {
     
         if (this.data.firstname.length > 20 ) {this.errors.push("firstname can not me more than 20 characters")}
         if (this.data.lastname.length > 20 ) {this.errors.push("lastname can not me more than 20 characters")}
+
+        if (this.data.password.length < 8 ) {this.errors.push("Password must be atleast 8 characters")}
+        if (this.data.password.length >20 ) {this.errors.push("Password must not more than 20 characters")}
     
         if (!validator.isAlphanumeric(this.data.firstname)) {this.errors.push("firstname should consists of character only")}
         if (!validator.isAlphanumeric(this.data.lastname)) {this.errors.push("lastname should consists of character only")}
     
-        if (!validator.isEmail(this.data.email)) {this.errors.push("please enter a valid email address")}
+        // if (!validator.isEmail(this.data.email)) {this.errors.push("please enter a valid email address")}
     
-        if (this.data.password.length < 8 && this.data.password.length > 20) {this.errors.push("Password must be atleast 8 characters and not more than 20 characters")}
 
         if (validator.isEmail(this.data.email)) {
             let userExist = await usersCollection.findOne({email: this.data.email})

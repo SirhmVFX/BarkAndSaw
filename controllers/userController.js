@@ -9,7 +9,7 @@ exports.signIn = function(req, res) {
 }
 
 exports.signUp = function (req, res) {
-    res.render("sign-up", {pageTitle: "SignUp-Bark&Saw", rerrors: req.flash("regErrors")})
+    res.render("sign-up", {pageTitle: "SignUp-Bark&Saw", regErrors: req.flash("regErrors")})
 }
 
 exports.register = function(req, res) {
