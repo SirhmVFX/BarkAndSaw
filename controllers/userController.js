@@ -17,7 +17,7 @@ exports.register = function(req, res) {
     user.register().then(function() {
         res.redirect("/sign-in")
     }).catch(function() {
-        res.send(user.errors)
+       res.redirect("/sign-up")
     })
 }
 
