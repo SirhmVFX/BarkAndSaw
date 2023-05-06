@@ -26,44 +26,43 @@ User.prototype.cleanUp = function() {
 }
 
 User.prototype.validate = function() {
-    if (this.data.firstname.length < 2 ) {this.errors.push("please enter a valid firstname")}
-    if (this.data.lastname.length < 2 ) {this.errors.push("please enter a valid last name")}
-
-    if (this.data.firstname.length > 20 ) {this.errors.push("firstname can not me more than 20 characters")}
-    if (this.data.lastname.length > 20 ) {this.errors.push("lastname can not me more than 20 characters")}
-
-    if (!validator.isAlphanumeric(this.data.firstname)) {this.errors.push("firstname should consists of character only")}
-    if (!validator.isAlphanumeric(this.data.lastname)) {this.errors.push("lastname should consists of character only")}
-
-    if (!validator.isEmail(this.data.email)) {this.errors.push("please enter a valid email address")}
-
-    if (this.data.password.length < 8 && this.data.password.length > 20) {this.errors.push("Password must be atleast 8 characters and not more than 20 characters")}
-
+    return new Promise(async (resolve, reject) => {
+        if (this.data.firstname.length < 2 ) {this.errors.push("please enter a valid firstname")}
+        if (this.data.lastname.length < 2 ) {this.errors.push("please enter a valid last name")}
     
+        if (this.data.firstname.length > 20 ) {this.errors.push("firstname can not me more than 20 characters")}
+        if (this.data.lastname.length > 20 ) {this.errors.push("lastname can not me more than 20 characters")}
+    
+        if (!validator.isAlphanumeric(this.data.firstname)) {this.errors.push("firstname should consists of character only")}
+        if (!validator.isAlphanumeric(this.data.lastname)) {this.errors.push("lastname should consists of character only")}
+    
+        if (!validator.isEmail(this.data.email)) {this.errors.push("please enter a valid email address")}
+    
+        if (this.data.password.length < 8 && this.data.password.length > 20) {this.errors.push("Password must be atleast 8 characters and not more than 20 characters")}
+    
+        if (validator.is(this.data.email)) {
+            let userExist = await usersCollection.findOne({email: this.data.email})
+            if (userExist) {this.errors.push("sorry a user with this email is existing")}
+        }
+        resolve()
+        
+    })
 }
 
-User.prototype.register = function(){
-    return new Promise(async (resolve, reject) => {
-        await this.validate()
+User.prototype.register = function() {
+    return new Promise( async (resolve, reject) => {
         this.cleanUp()
-    
+        await this.validate()
+
         if (!this.errors.length) {
-            let userExists = await usersCollection.findOne({email: this.data.email})
-            if (userExists) {
-                this.errors.push("Sorry!! an account has been created with this email address")
-            } else {
-                let salt = bcrypt.genSaltSync(10)
-                this.data.password = bcrypt.hashSync(this.data.password, salt)
-                this.data.confirmPassword = bcrypt.hashSync(this.data.confirmPassword, salt)
-        
-                await usersCollection.insertOne(this.data)
-                resolve()
-            }
+            let salt = bcrypt.genSaltSync(10)
+            this.data.password = bcrypt.hashSync(this.data.password, salt)
+
+            await usersCollection.insertOne(this.data) 
+            resolve()
         } else {
             reject(this.errors)
         }
-        
-        
     })
 }
 
