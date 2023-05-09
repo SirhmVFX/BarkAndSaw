@@ -11,5 +11,6 @@ router.post("/register", userController.register)
 router.post("/logout", userController.logout)
 
 router.get("/profile", userController.profile)
+router.get("/admin/dashboard", userController.dashboard)
 
 module.exports = router

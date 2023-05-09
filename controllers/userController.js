@@ -55,3 +55,7 @@ exports.logout = function(req, res) {
         res.redirect("/")
     })
 }
+
+exports.dashboard = function(req, res) {
+    res.render("dashboard")
+}

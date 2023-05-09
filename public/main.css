@@ -41,7 +41,7 @@ html {
     --fs-h4: clamp(1rem, 4vw, .8rem);
 
 
-    --p: clamp(1rem, 4vw, 0.7rem);
+    --p: clamp(14px, 4vw, 10px);
 
 }
 
@@ -69,7 +69,11 @@ h4 {
 }
 
 p {
-    font-size: --p;
+    font-size: var(--p);
+}
+
+li {
+    font-size: var(--p);
 }
 
 .container {
@@ -165,6 +169,13 @@ nav {
 .nav_menu li a {
     color: var(--color1);
     text-decoration: none;
+}
+
+.nav_menu li a:hover {
+    background-color: var(--color1);
+    color: white;
+    padding: 10px;
+    transition: .4s;
 }
 
 .two-col {
