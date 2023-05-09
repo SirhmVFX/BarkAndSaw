@@ -461,4 +461,45 @@ form input {
     margin-block: 1rem;
 }
 
+.dashboard {
+    display: grid;
+    width: 100%;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+}
+
+.dashboard-menu {
+    background-color: var(--color1);
+    padding: 2rem;
+}
+
+.dh-menus {
+    display: flex;
+    align-items: center;
+    height: 300px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.menus li {
+    list-style: none;
+}
+
+
+.dh-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+   width: 70px; 
+}
+
 
