@@ -477,17 +477,30 @@ form input {
 .dh-menus {
     display: flex;
     align-items: center;
-    height: 300px;
+    gap: 1rem;
+
+}
+
+.ic {
+    width: 15px;
 }
 
 .icons {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.menus {
+    display: flex;
+    flex-direction: column;
+    justify-content: space;
+
 }
 
 .menus li {
     list-style: none;
+
 }
 
 
