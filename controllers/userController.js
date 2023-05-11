@@ -30,7 +30,7 @@ exports.register = function(req, res) {
 exports.login = function(req, res) {
     let user = new User(req.body)
     user.login().then(function(result){
-        req.session.user = {email: user.data.email, _id: user.data._id}
+        req.session.user = {email: user.data.email, _id: user.data._id, name: user.data.firstname}
         req.session.save(function() {
             res.redirect("/") 
         })

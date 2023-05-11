@@ -146,6 +146,19 @@ li {
     gap: 1rem;   
 }
 
+.prof {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: .5rem;border-radius: ;
+    background-color: var(--color1);
+}
+
+.prof a {
+    color: white;
+    text-decoration: none;
+}
+
 .icon {
     width: 8%;
 }

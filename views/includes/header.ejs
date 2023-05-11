@@ -19,14 +19,17 @@
                 <input type="text" class="input-field" placeholder="Search entire stores  here..." >
 
                 <% if (user) { %>
-                    <p>Welcome <%= user.email %></p>
+                    <p>Welcome <%= user.name %></p>
                 <% } else { %>
                     <p>No user</p>
                 <% } %>
 
                 <div class="top-ico">
-                    <i class="fa color1 fa-user" aria-hidden="true" ><a href="/profile">my profile</a></i>
+                    <div class="prof">
+                    <i class="fa fa-user" aria-hidden="true" ></i>
+                    <a href="/profile">my profile</a>
 
+                    </div>
                     <i class="fa color1 fa-heart"></i>
 
                     <i class="fa color1 fa-shopping-cart" aria-hidden="true"></i>
