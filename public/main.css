@@ -147,7 +147,7 @@ li {
 .top-ico {
     display: flex;
     gap: 1rem;  
-    align-items: center; 
+    align-items: center;
 }
 
 .prof {
@@ -157,6 +157,18 @@ li {
     padding: .5rem 1rem;
     border-radius: 10px;
     background-color: var(--color1);
+    position: relative;
+    min-width: 130px;
+
+}
+
+.prof-details {
+    position: absolute;
+    top: 35px;
+    background-color: var(--color1);
+    padding: .5rem 1rem;
+    min-width: 130px;
+    left: 0px;
 }
 
 .prof a {
