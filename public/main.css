@@ -169,6 +169,13 @@ li {
     padding: .5rem 1rem;
     min-width: 130px;
     left: 0px;
+    display: none;
+    transition: .4s;
+}
+
+.prof:hover .prof-details {
+    display: block;
+    transition: .4s;
 }
 
 .prof a {
@@ -456,7 +463,7 @@ footer {
 
 
 form {
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
     display: flex;
     flex-direction: column;
 }
