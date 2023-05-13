@@ -132,6 +132,9 @@ li {
     color: var(--color4);
 }
 
+.color-wh {
+    color: white;
+}
 /* GENERAL STYLES */
 .first-nav {
     display: flex;
@@ -151,7 +154,7 @@ li {
     display: flex;
     gap: 1rem;
     align-items: center;
-    padding: .5rem;
+    padding: .5rem 1rem;
     border-radius: 10px;
     background-color: var(--color1);
 }
