@@ -101,6 +101,7 @@ li {
     border: none;
     padding: .5rem;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .mg-bk-1 {
@@ -227,6 +228,7 @@ nav {
     color: white;
     padding: 10px;
     transition: .4s;
+    border-radius: 10px;
 }
 
 .two-col {
@@ -278,7 +280,7 @@ nav {
     color: var(--color1);
 }
 
-.fa 
+
 
 
 .review {
