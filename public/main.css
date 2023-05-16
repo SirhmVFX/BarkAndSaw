@@ -541,4 +541,32 @@ form input {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    color: white;
+}
+
+.navmenu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+} 
+
+.navmenu ul li {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: white;
+}
+
+.navmenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navmenu ul li:hover {
+    background-color: var(--color3);
+    border-radius: 10px;
+
 }
