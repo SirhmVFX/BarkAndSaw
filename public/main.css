@@ -517,58 +517,28 @@ form input {
     margin-block: 1rem;
 }
 
+
+
+/* DASHBOARD STYLES */
+
+.logo {
+    width: 25%;
+}
+
 .dashboard {
     display: grid;
-    width: 100%;
     grid-auto-flow: column;
-    grid-template-columns: 1fr 4fr;
+    grid-auto-columns: 1fr 4fr;
+}
+
+.sidenav {
+    background-color: var(--color1);
     height: 100vh;
 }
 
-.dashboard-menu {
-    background-color: var(--color1);
+.opener {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 2rem;
 }
-
-.dh-menus {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-}
-
-.ic {
-    width: 15px;
-}
-
-.icons {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.menus {
-    display: flex;
-    flex-direction: column;
-    justify-content: space;
-
-}
-
-.menus li {
-    list-style: none;
-
-}
-
-
-.dh-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.logo {
-   width: 70px; 
-}
-
-
