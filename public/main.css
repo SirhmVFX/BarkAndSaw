@@ -547,7 +547,7 @@ form input {
 .navmenu ul {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem 2rem;
 } 
 
 .navmenu ul li {
@@ -568,5 +568,4 @@ form input {
 .navmenu ul li:hover {
     background-color: var(--color3);
     border-radius: 10px;
-
 }
