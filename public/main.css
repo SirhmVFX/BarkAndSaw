@@ -31,7 +31,7 @@ html {
     --color1: #E16F25;
     --color2: #C98B43;
     --color3: #FBC786;
-    --color4: #BCB698;
+    --color4: #ececeb;
     --color-alert: #C80000;
     --color-bk: #474444;
 
@@ -90,7 +90,6 @@ li {
     background-color: var(--color1);
     border: none;
     border-radius: 10px;
-    margin-block: 2rem;
     font-weight: 500;
     color: white;
 }
@@ -532,22 +531,26 @@ form input {
 }
 
 .sidenav {
-    background-color: var(--color1);
+    background-color: var(--color3);
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
 }
 
 .opener {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
     color: white;
 }
+
 
 .navmenu ul {
     display: flex;
     flex-direction: column;
-    padding: 1rem 2rem;
+    /* padding: .5rem 2rem; */
 } 
 
 .navmenu ul li {
@@ -555,33 +558,48 @@ form input {
     display: flex;
     gap: 1rem;
     align-items: center;
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 1rem;
-    color: white;
+    color: black;
 }
 
 .navmenu li a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 .navmenu ul li:hover {
-    background-color: var(--color3);
+    background-color: var(--color1);
     border-radius: 10px;
+    color: white;
+}
+
+.navmenu ul li a:hover {
+    color: white;
 }
 
 .admin {
-    padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+.prof-det {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.dsh {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .dash-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
 }
 
 .icons {
@@ -603,4 +621,37 @@ form input {
     border-radius: 50px;
     border: 2px solid var(--color1);
     object-fit: cover;
+}
+
+
+
+.dashboard-contents {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+.overview-card {
+    border: 3px solid var(--color1);
+    padding: 3rem;
+    border-radius: 20px;
+    background-color: wheat;
+}
+
+.over-det {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.overview-ico {
+    background-color: var(--color1);
+    padding: 1rem 1.3rem;
+    border-radius: 50%;
+    color: white;
+} 
+
+span {
+    color: green;
 }
