@@ -633,10 +633,18 @@ form input {
 }
 
 .overview-card {
-    border: 3px solid var(--color1);
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 20px;
     background-color: wheat;
+}
+
+.bg {
+    background-color: black;
+    color: white;
+}
+
+.bg2 {
+    background-color: var(--color2);
 }
 
 .over-det {
@@ -654,4 +662,5 @@ form input {
 
 span {
     color: green;
+    font-weight: 600;
 }
