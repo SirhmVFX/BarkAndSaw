@@ -220,12 +220,13 @@ nav {
 .nav_menu li a {
     color: var(--color1);
     text-decoration: none;
+    padding: 10px;
 }
 
 .nav_menu li a:hover {
     background-color: var(--color1);
     color: white;
-    padding: 10px;
+    
     transition: .4s;
     border-radius: 10px;
 }
