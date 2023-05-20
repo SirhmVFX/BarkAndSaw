@@ -115,6 +115,17 @@ li {
     margin-block: 1rem;
 }
 
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    display: none;
+}
+
+.add {
+    display: block;
+}
 .sq {
     width: 70%;
     display: flex;

@@ -16,3 +16,7 @@ faqs.forEach(function(faq) {
         faq.classList.toggle("active")
     })
 })
+
+const products = document.querySelectorAll(".products")
+
+products.addEventListener()
