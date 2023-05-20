@@ -126,6 +126,7 @@ li {
 .add {
     display: block;
 }
+
 .sq {
     width: 70%;
     display: flex;
@@ -254,6 +255,7 @@ nav {
     gap: 3rem;
     flex-wrap: wrap;
 }
+
 .products {
     position: relative;
     width: 350px;

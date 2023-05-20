@@ -18,5 +18,13 @@ faqs.forEach(function(faq) {
 })
 
 const products = document.querySelectorAll(".products")
+const cart = document.querySelector(".cart")
 
-products.addEventListener()
+console.log(cart);
+
+products.forEach(function(mover) {
+    mover.addEventListener("mouseover", () => {
+        cart.classList.toggle("add")
+    })
+})
+
