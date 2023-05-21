@@ -115,17 +115,7 @@ li {
     margin-block: 1rem;
 }
 
-.cart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    display: none;
-}
 
-.add {
-    display: block;
-}
 
 .sq {
     width: 70%;
@@ -255,12 +245,30 @@ nav {
     gap: 3rem;
     flex-wrap: wrap;
 }
-
 .products {
     position: relative;
     width: 350px;
     padding: 2rem;
     background-color: #F9F9F9;
+}
+
+.cart {
+    position: absolute;
+    bottom: -40;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    background-color: #feca8e;
+    transition: .2s;
+}
+
+.products:hover .cart{
+    opacity: 100;
+    bottom: 0;
 }
 
 .line {}
