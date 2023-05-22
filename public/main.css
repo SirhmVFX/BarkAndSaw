@@ -158,6 +158,7 @@ li {
     display: flex;
     gap: 1rem;  
     align-items: center;
+    transition: .4s;
 }
 
 .prof {
@@ -169,6 +170,10 @@ li {
     background-color: var(--color1);
     position: relative;
     min-width: 130px;
+    transition: .4s;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
 
 }
 
@@ -192,11 +197,6 @@ li {
     transition: .4s;
     cursor: pointer;
     
-}
-
-.prof {
-    color: white;
-    text-decoration: none;
 }
 
 .icon {
