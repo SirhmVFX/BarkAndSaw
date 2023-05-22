@@ -387,14 +387,14 @@ nav {
 
 footer {
     background-color: #D7D9D8;
+    width: 100%;
+    padding: 2rem;
 }
 
 .fi-ft {
-    display: flex;
+    display: flex;  
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-
 }
 
 .fi-ft2 {
@@ -414,10 +414,12 @@ footer {
 
 .socials {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 1rem;
 }
+
+/* FAQ Section */
 
 .faq-container {
     display: flex;
