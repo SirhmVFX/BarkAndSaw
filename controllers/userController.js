@@ -63,3 +63,9 @@ exports.dashboard = function(req, res) {
 exports.categories = function(req, res) {
     res.render("categories", {pageTitle: "categories"})
 }
+
+
+
+exports.singleProduct = function(req, res) {
+    res.render("singleproduct", {pageTitle: "singleProduct"})
+}

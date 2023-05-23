@@ -15,4 +15,5 @@ router.get("/admin/dashboard", userController.dashboard)
 
 
 router.get("/categories", userController.categories)
+router.get("/singleproduct", userController.singleProduct)
 module.exports = router

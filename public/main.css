@@ -721,3 +721,10 @@ span {
 .cate {
     margin-inline: 1rem;
 }
+
+
+
+/* SINGLE PRODUCTS */
+.prod__img {
+    display: flex;
+}
