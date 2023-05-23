@@ -59,3 +59,7 @@ exports.logout = function(req, res) {
 exports.dashboard = function(req, res) {
     res.render("dashboard")
 }
+
+exports.categories = function(req, res) {
+    res.render("categories", {pageTitle: "categories"})
+}

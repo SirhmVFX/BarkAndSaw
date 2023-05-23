@@ -13,4 +13,6 @@ router.post("/logout", userController.logout)
 router.get("/profile", userController.profile)
 router.get("/admin/dashboard", userController.dashboard)
 
+
+router.get("/categories", userController.categories)
 module.exports = router
