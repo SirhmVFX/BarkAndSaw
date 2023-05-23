@@ -699,3 +699,20 @@ span {
     color: green;
     font-weight: 600;
 }
+
+/* SHOPPING OPTIONS */
+
+.shopping {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.options {
+    display: flex;
+    border: 1px solid var(--color1);
+    padding: 1rem;
+    justify-content: space-between;
+}
