@@ -69,3 +69,7 @@ exports.categories = function(req, res) {
 exports.singleProduct = function(req, res) {
     res.render("singleproduct", {pageTitle: "singleProduct"})
 }
+
+exports.shoppingCart = function(req, res) {
+    res.render("shopping-cart", {pageTitle: "Shopping Cart"})
+}
