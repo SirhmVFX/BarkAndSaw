@@ -3,9 +3,9 @@ import { HttpError } from "@utils/HttpError";
 import * as Templates from "@templates";
 
 export class EmailService {
-    public async sendWelcomeEmail(email: string, username: string) {
+    public async sendWelcomeEmail(email: string, name: string) {
         try {
-            const emailTemplate = Templates.WelcomeTemplate(username);
+            const emailTemplate = Templates.WelcomeTemplate(name);
             const to = email;
             const subject = "Welcome to BarkAndShaw";
             const html = emailTemplate;

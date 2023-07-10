@@ -1,4 +1,4 @@
-export const WelcomeTemplate = function (username: string) {
+export const WelcomeTemplate = function (name: string) {
     const currentYear = new Date().getFullYear();
 
     const html = `
@@ -49,7 +49,7 @@ export const WelcomeTemplate = function (username: string) {
         <!-- Main content -->
         <div class="container">
           <h1>Welcome to Our Website!</h1>
-          <p>Dear ${username},</p>
+          <p>Dear ${name},</p>
           <p>Thank you for joining our community. We are thrilled to have you on board!</p>
           <p>Feel free to explore our website and discover all the exciting features we have to offer.</p>
           <p>If you have any questions or need assistance, please don't hesitate to contact our support team.</p>
