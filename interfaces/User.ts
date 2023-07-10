@@ -5,7 +5,6 @@ export interface IUser {
     lastName: string;
     email: string;
     phone: number;
-    location: string;
     image: {
         public_id: string;
         url: string;
