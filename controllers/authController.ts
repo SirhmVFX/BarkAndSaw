@@ -117,8 +117,34 @@ const forgotPassword = async (req: Request, res: Response, next: NextFunction) =
     }
 };
 
+const resetPassword = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { email, otp, password } = req.body;
+  
+      let user = await User.findOne({ email });
+      if (!user) {
+        throw new HttpError(400, "You have entered an invalid email address");
+      }
+      let isOtpValid = await verifyOtp(user._id, otp, OtpType.FORGET);
+      if (!isOtpValid) {
+        throw new HttpError(400, "This OTP has Invalid");
+      }
+      const hashPassword = await hash(password, 12);
+      user.password = hashPassword;
+  
+      await user.save();
+  
+      await otpMaster.findByIdAndDelete(isOtpValid);
+  
+      return jsonOne<string>(res, 200, 'Password updated successfully');
+    } catch (e) {
+      next(e);
+    }
+  };
+
 export default {
     signup,
     signin,
     forgotPassword,
+    resetPassword,
 }
