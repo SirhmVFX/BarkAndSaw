@@ -1,11 +1,10 @@
 {
   "name": "barkandsaw",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "watch": "tsc -w",
-    "dev": "nodemon -r tsconfig-paths/register index.ts",
+    "dev": "nodemon app.ts",
     "start": "node -r tsconfig-paths/register dist/index.js",
     "build": "tsc",
     "build:lib": "tsc"
@@ -68,5 +67,6 @@
     "prettier": "2.8.8",
     "tsc-alias": "^1.8.5",
     "tsconfig-paths": "^4.2.0"
-  }
+  },
+  "description": ""
 }
