@@ -30,7 +30,7 @@
       "@middlenames/*": ["middlenames/*"],
       "@routes/*": ["routes/*"],
       "@services/*": ["services/*"],
-      "@templates/*": ["templates/*"],
+      "@templates": ["templates"],
       "@utils/*": ["utils/*"],
       "@validators/*": ["validators/*"]
     }
