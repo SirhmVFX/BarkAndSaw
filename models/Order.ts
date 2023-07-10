@@ -3,7 +3,6 @@ import { IOrder } from '@interfaces/Order';
 
 export interface IOrderModel extends IOrder, Document { }
 
-
 const SingleOrderSchema: Schema = new Schema(
     {
         name: {
