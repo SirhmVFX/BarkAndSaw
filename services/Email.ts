@@ -7,7 +7,7 @@ export class EmailService {
         try {
             const emailTemplate = Templates.WelcomeTemplate(username);
             const to = email;
-            const subject = "Welcome to Flowday";
+            const subject = "Welcome to BarkAndShaw";
             const html = emailTemplate;
 
             await sendEmail(to, subject, html);
