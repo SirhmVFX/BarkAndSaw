@@ -12,7 +12,7 @@ import { crateRole } from '@controllers/roleController';
 import swaggerUI from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
-const swaggerJsDocs = YAML.load('.swagger.yaml');
+const swaggerJsDocs = YAML.load('./swagger.yaml');
 
 const router = express();
 
