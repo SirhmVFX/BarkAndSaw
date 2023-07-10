@@ -28,6 +28,7 @@
       "@controllers/*": ["controllers/*"],
       "@interfaces/*": ["interfaces/*"],
       "@middlenames/*": ["middlenames/*"],
+      "@models/*": ["models/*"],
       "@routes/*": ["routes/*"],
       "@services/*": ["services/*"],
       "@templates": ["templates"],
