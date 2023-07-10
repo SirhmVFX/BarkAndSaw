@@ -1,7 +1,7 @@
 import { IProduct } from "./Product";
 import { IUser } from "./User";
 
-export interface SingleOrder {
+interface SingleOrder {
     name: string;
     image: string;
     price: number;
