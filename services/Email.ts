@@ -15,4 +15,17 @@ export class EmailService {
             throw new HttpError(500, "Unable to send email");
         }
     }
+
+    public async sendForgetPassword(email: string, firstName: string, otp: string) {
+        try {
+            const emailTemplate = Templates.ForgetPasswordTemplate(firstName, otp);
+            const to = email;
+            const subject = 'Forget Password';
+            const html = emailTemplate;
+
+            await sendEmail(to, subject, html);
+        } catch (error) {
+            throw new HttpError(500, "Unable to send email");
+        }
+    }
 }

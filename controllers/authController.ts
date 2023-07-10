@@ -57,37 +57,68 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
 
 const signin = async (req: Request, res: Response, next: NextFunction): Promise<AuthInterface> => {
     try {
-      let bodyData = matchedData(req, {
-        includeOptionals: true,
-        locations: ['body'],
-      });
-  
-      const { email, password } = bodyData;
-  
-      const existingUser = await User.findOne({ email });
-      if (!existingUser) {
-        throw new HttpError(400, "Account with email not found");
-      }
-  
-      const isValidPass = await compare(password, existingUser.password);
-  
-      if (!isValidPass) {
-        throw new HttpError(400, "You have entered an invalid password");
-      }
-  
-      const token = await tokenBuilder(existingUser);
-      const response = {
-        user: existingUser,
-        accessToken: token.accessToken,
-      };
-  
-      return jsonOne<AuthInterface>(res, 200, response);
+        let bodyData = matchedData(req, {
+            includeOptionals: true,
+            locations: ['body'],
+        });
+
+        const { email, password } = bodyData;
+
+        const existingUser = await User.findOne({ email });
+        if (!existingUser) {
+            throw new HttpError(400, "Account with email not found");
+        }
+
+        const isValidPass = await compare(password, existingUser.password);
+
+        if (!isValidPass) {
+            throw new HttpError(400, "You have entered an invalid password");
+        }
+
+        const token = await tokenBuilder(existingUser);
+        const response = {
+            user: existingUser,
+            accessToken: token.accessToken,
+        };
+
+        return jsonOne<AuthInterface>(res, 200, response);
     } catch (error) {
-      next(error);
+        next(error);
     }
-  };
+};
+
+const forgotPassword = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const email = req.body.email;
+        const user = await User.findOne({ email }).populate('role');
+
+        if (!user) {
+            throw new HttpError(400, 'Email Address Does Not Exist');
+        }
+
+        let tokenExpiration: any = new Date();
+        tokenExpiration = tokenExpiration.setMinutes(tokenExpiration.getMinutes() + 10);
+
+        const otp: string = generateOtp(6);
+
+        let newOtp = new otpMaster({
+            userId: user._id,
+            type: OtpType.FORGET,
+            otp,
+            otpExpiration: new Date(tokenExpiration),
+        });
+        await newOtp.save();
+
+        await mail.sendForgetPassword(email, user.firstName, otp);
+
+        return jsonOne<string>(res, 200, 'Forget Password OTP Sent');
+    } catch (error) {
+        next(error);
+    }
+};
 
 export default {
     signup,
     signin,
+    forgotPassword,
 }
