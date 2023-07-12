@@ -109,7 +109,8 @@ const forgotPassword = async (req: Request, res: Response, next: NextFunction) =
         });
         await newOtp.save();
 
-        await mail.sendForgetPassword(email, user.firstName, otp);
+        const name = user.firstName + ' ' + user.lastName;
+        await mail.sendForgetPassword(email, name, otp);
 
         return jsonOne<string>(res, 200, 'Forget Password OTP Sent');
     } catch (error) {
@@ -135,6 +136,9 @@ const resetPassword = async (req: Request, res: Response, next: NextFunction) =>
       await user.save();
   
       await otpMaster.findByIdAndDelete(isOtpValid);
+
+      const name = user.firstName + ' ' + user.lastName;
+      await mail.sendChangePassword(user.email, name);
   
       return jsonOne<string>(res, 200, 'Password updated successfully');
     } catch (e) {

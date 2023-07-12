@@ -1,6 +1,6 @@
 import { ICategory } from "./Category";
 
-interface Image {
+export interface Image {
     public_id: string;
     url: string
 }

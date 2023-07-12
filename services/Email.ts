@@ -16,11 +16,24 @@ export class EmailService {
         }
     }
 
-    public async sendForgetPassword(email: string, firstName: string, otp: string) {
+    public async sendForgetPassword(email: string, name: string, otp: string) {
         try {
-            const emailTemplate = Templates.ForgetPasswordTemplate(firstName, otp);
+            const emailTemplate = Templates.ForgetPasswordTemplate(name, otp);
             const to = email;
             const subject = 'Forget Password';
+            const html = emailTemplate;
+
+            await sendEmail(to, subject, html);
+        } catch (error) {
+            throw new HttpError(500, "Unable to send email");
+        }
+    }
+
+    public async sendChangePassword(email: string, name: string) {
+        try {
+            const emailTemplate = Templates.ChangePassword(name);
+            const to = email;
+            const subject = "Password Changed";
             const html = emailTemplate;
 
             await sendEmail(to, subject, html);

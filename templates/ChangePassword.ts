@@ -1,4 +1,4 @@
-export const ForgetPasswordTemplate = function (name: string, otp: string) {
+export const ChangePassword = function (name: string) {
     const currentYear = new Date().getFullYear();
 
     const html = `
@@ -61,7 +61,6 @@ export const ForgetPasswordTemplate = function (name: string, otp: string) {
           <h1>Password Reset</h1>
           <p>Dear ${name},</p>
           <p>We have received a password reset request for your account. To proceed with resetting your password, please use the following OTP (One-Time Password):</p>
-          <button class="otp-button">${otp}</button>
           <p>If you didn't request a password reset, you can ignore this email.</p>
           <p>Best regards,</p>
           <p>The [Your Company] Team</p>
