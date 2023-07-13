@@ -4,6 +4,8 @@ import { router as Category } from './category.route';
 import { router as Product } from './product.route';
 import { router as Address } from './address.route';
 import { router as Review } from './review.route';
+import { router as Auth } from './auth.route';
+import { router as User } from './user.route';
 
 const _router: Router = Router({
   mergeParams: true,
@@ -23,6 +25,8 @@ _router.route('/v1/health-check').get(function (req: Request, res: Response) {
 
 
 _router.use('/v1/role', Role);
+_router.use('/v1/auth', Auth);
+_router.use('/v1/user', User);
 _router.use('/v1/category', Category);
 _router.use('/v1/products', Product);
 _router.use('/v1/address', Address);
