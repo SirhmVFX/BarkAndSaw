@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { HttpError } from '@utils/HttpError';
-import { jsonOne } from '@utils/general';
+import { jsonAll, jsonOne } from '@utils/general';
 import cloudinary from '@config/cloudinary';
 import Product, { IProductModel } from '@models/Product';
 import { ICategory } from '@interfaces/Category';
@@ -49,4 +49,93 @@ const createProduct = async (req: Request, res: Response, next: NextFunction) =>
     }
 };
 
-export { createProduct };
+const getProducts = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const products = await Product.find();
+
+        if (products.length === 0) {
+            return res.status(404).json({ message: 'No products found' });
+        }
+
+        return jsonAll<IProductModel>(res, 200, products);
+    } catch (error) {
+        return next(error);
+    }
+};
+
+const getProduct = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const productId = req.params.id;
+        const product = await Product.findById(productId);
+        if (!product) {
+            throw new HttpError(404, 'Product not found');
+        }
+        return jsonOne<IProductModel>(res, 200, product);
+    } catch (error) {
+        return next(error);
+    }
+};
+
+const deleteProduct = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const productId = req.params.id;
+        const product = await Product.findById(productId);
+        if (!product) {
+            throw new HttpError(404, 'Product not found');
+        }
+        await product.remove();
+        return res.sendStatus(204);
+    } catch (error) {
+        return next(error);
+    }
+};
+
+const updateProduct = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const productId = req.params.id;
+        const { name, price, quantity, colors, category, miniDescription, description, isAvailable } = req.body;
+
+        const product = await Product.findById(productId);
+        if (!product) {
+            throw new HttpError(404, 'Product not found');
+        }
+
+        product.name = name;
+        product.price = price;
+        product.quantity = quantity;
+        product.colors = colors;
+        product.category = category;
+        product.miniDescription = miniDescription;
+        product.description = description;
+        product.isAvailable = isAvailable;
+
+        const updatedProduct = await product.save();
+        return jsonOne<IProductModel>(res, 200, updatedProduct);
+    } catch (error) {
+        return next(error);
+    }
+};
+
+const getCategoryProducts = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const categoryId = req.params.categoryId;
+        const products = await Product.find({ category: categoryId });
+
+        if (products.length === 0) {
+            return res.status(404).json({ message: 'No products found in this category' });
+        }
+
+        return jsonAll<IProductModel>(res, 200, products);
+    } catch (error) {
+        return next(error);
+    }
+};
+
+export default {
+    createProduct,
+    getProduct,
+    getProducts,
+    deleteProduct,
+    updateProduct,
+    getCategoryProducts,
+};
